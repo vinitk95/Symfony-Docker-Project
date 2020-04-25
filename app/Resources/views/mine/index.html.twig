@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <h1>My first view</h1>
+    {%  for key in userdtls %}
+        <div>
+            {{ key.eMPID }}
+            {{ key.aDDRESS }}
+        </div>
+    {%  endfor %}
+       
+    
+{% endblock %}
