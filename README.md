@@ -1,10 +1,6 @@
 Symfony Standard Edition
 ========================
 
-**WARNING**: This distribution does not support Symfony 4. See the
-[Installing & Setting up the Symfony Framework][15] page to find a replacement
-that fits you best.
-
 Welcome to the Symfony Standard Edition - a fully-functional Symfony
 application that you can use as the skeleton for your new applications.
 
@@ -64,6 +60,28 @@ All libraries and bundles included in the Symfony Standard Edition are
 released under the MIT or BSD license.
 
 Enjoy!
+
+
+Steps to run the Project : 
+
+1. Go inside the Project and run command:   php bin/console server:run
+
+Steps to create Docker images and link those images :
+
+1. sudo docker build --file docker/php/Dockerfile -t gh_php:latest .
+
+2. sudo docker run gh_php
+
+3. sudo docker build --file docker/nginx/Dockerfile -t gh_nginx:latest .
+
+4. Run Command sudo docker ps and find the name of PHP container
+
+5. sudo docker run --link awesome_bose:gh_php -P 8c62b3de70b8
+
+NOTE :  Here awesome_bose is the name of php container and it will be different each time you run the docker.
+	gh_php is the name of the image
+	8c62b3de70b8 is the image id of nginx.
+
 
 [1]:  https://symfony.com/doc/3.4/setup.html
 [6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
